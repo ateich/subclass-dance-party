@@ -28,6 +28,7 @@ $(document).ready(function() {
   gameOver = function(){
     clearInterval(makeProjectiles);
     $('.projectiles').remove();
+    $('.chopper').remove();
   }
 
 });

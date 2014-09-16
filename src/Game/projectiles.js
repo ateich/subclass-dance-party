@@ -1,6 +1,6 @@
 var Projectiles = function() {
   this.x = $('body').width();
-  this.y = Math.random() * $('body').height();
+  this.y = Math.random() * ($('body').height()-50);
 
 
   this.$node = $('<div class="projectiles"></div>');
@@ -22,7 +22,7 @@ Projectiles.prototype.move = function() {
       this.$node.remove();
       clearInterval(this.moveInterval);
     }
-  } else if(this.x < 0){
+  } else if(this.x < -50){
     this.$node.remove();
     clearInterval(this.moveInterval);
   }
