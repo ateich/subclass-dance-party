@@ -8,6 +8,7 @@ var Projectiles = function() {
   this.$node.css('left', this.x);
   this.$node.css('top', this.y);
   this.moveInterval = setInterval(this.move.bind(this), 50);
+   // this.smoothMovement = new SmoothMovement(1000, 0);
 };
 
 Projectiles.prototype.move = function() {
