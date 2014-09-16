@@ -38,6 +38,7 @@ $(document).ready(function() {
   });
 
   gameOver = function(){
+    console.log("IN GAME OVER");
     for(var i =0; i<makeProjectiles.length; i++){
     clearInterval(makeProjectiles[i]);
     }

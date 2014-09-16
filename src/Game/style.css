@@ -38,6 +38,17 @@ body{
   background:url('death.gif') no-repeat 0 0;
   background-size: contain;
 }
+.explosion{
+  /*width: 120px;
+  height: 259px;*/
+  margin-top:-100px;
+  width: 120px;
+  height: 259px;
+  background:url('explosion2.gif') no-repeat 0 0;
+  background-size:cover;
+  /*background-color:green;*/
+  /*background-size: contain;*/
+}
 .newGameButton {
   font-family: 'Indie Flower', cursive;
   font-size:4em;

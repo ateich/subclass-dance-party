@@ -45,8 +45,6 @@ Projectiles.prototype.move = function(hitCall) {
 
   if(this.x < chopperPos.left + $('.chopper').width() && this.x > chopperPos.left){
     if(this.y > chopperPos.top && this.y < chopperPos.top + $('.chopper').height()){
-      //chopper.loseHealth();
-      //
       hitCall();
       this.$node.remove();
       clearInterval(this.moveInterval);
