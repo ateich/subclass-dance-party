@@ -10,10 +10,6 @@ $(document).ready(function() {
     var projectile = new Projectiles();
   }, 1000);
 
-  // setInterval(function() {
-  //   var projectile = new Projectiles();
-  // }, 1000);
-
 
   };
 

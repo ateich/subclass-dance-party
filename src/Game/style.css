@@ -1,7 +1,8 @@
 .chopper {
+  background:url('cat.gif') no-repeat 0 0;
   width: 150px;
-  height: 20px;
-  background-color:red;
+  height: 150px;
+  background-size: contain;
   position:absolute;
 }
 
@@ -9,8 +10,9 @@ body{
 }
 
 .projectiles {
-  width: 10px;
-  height: 10px;
-  background-color: black;
+  background:url('cupcake.gif') no-repeat 0 0;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
   position: absolute;
 }

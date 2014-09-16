@@ -4,7 +4,7 @@ var Chopper = function(yPosition){
   this.y = $('body').height()/2-50;
   this.x = 100;
 
-  this.$node = '<div class="chopper">Chopper Goes Here</div>';
+  this.$node = '<div class="chopper"></div>';
   $('body').append(this.$node);
 
   $('.chopper').css({left: this.x, top: this.y});
