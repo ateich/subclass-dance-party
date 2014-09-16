@@ -4,6 +4,7 @@ var Chopper = function(yPosition){
   this.y = $('body').height()/2-50;
   this.x = 100;
   this.points = 0;
+  this.alive = true;
 
   this.$node = $('<div class="chopper"></div>');
   $('body').append(this.$node);
@@ -56,7 +57,10 @@ Chopper.prototype.loseLife = function(livesLost){
 
     setTimeout(function(){
       $('.stats').html("GAME OVER <br> Final Score: " + this.points);
-      gameOver();
+      if(this.alive){
+        gameOver();
+      }
+      this.alive = false;
     }.bind(this), 1000);
 
   } else {

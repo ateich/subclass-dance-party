@@ -64,6 +64,24 @@ body{
   border-color:white;
   outline:none;
 }
+.instructions{
+  font-family: 'Indie Flower', cursive;
+  font-size:2em;
+  color:white;
+}
+
+.rotate90{
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+h3{
+  margin:0;
+  padding:0;
+}
 
 .stats {
   font-family: 'Indie Flower', cursive;
