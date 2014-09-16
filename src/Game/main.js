@@ -1,14 +1,22 @@
 var chopper;
 var gameOver;
-var makeProjectiles;
+var makeProjectiles = [];
 
 $(document).ready(function() {
   var startGame = function(){
   chopper = new Chopper(100);
 
-  makeProjectiles = setInterval(function() {
-    var projectile = new Projectiles();
-  }, 1000);
+  makeProjectiles.push(setInterval(function() {
+    var projectile = new Projectiles();//CUPCAKE
+  }, 1000));
+
+  makeProjectiles.push(setInterval(function() {
+    var projectile = new Projectile1();
+  }, 2000));//CHEEZBURGER
+
+  makeProjectiles.push(setInterval(function() {
+    var projectile = new KillerProjectile();
+  }, 2000));//DEATH
 
 
   };
@@ -26,7 +34,9 @@ $(document).ready(function() {
   });
 
   gameOver = function(){
-    clearInterval(makeProjectiles);
+    for(var i =0; i<makeProjectiles.length; i++){
+    clearInterval(makeProjectiles[i]);
+    }
     $('.projectiles').remove();
     $('.chopper').remove();
   }

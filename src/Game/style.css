@@ -1,12 +1,14 @@
 .chopper {
   background:url('cat.gif') no-repeat 0 0;
-  width: 150px;
+  width: 75px;
   height: 150px;
   background-size: contain;
   position:absolute;
 }
 
 body{
+  background:url('galaxy.jpg') no-repeat 0 0;
+  background-size: contain;
   margin:0;
   padding:0;
   background-color: gray;
@@ -14,11 +16,24 @@ body{
 }
 
 .projectiles {
-  background:url('cupcake.gif') no-repeat 0 0;
   width: 50px;
   height: 50px;
-  background-size: contain;
   position: absolute;
+}
+
+.cupcake {
+  background:url('cupcake.gif') no-repeat 0 0;
+  background-size: contain;
+}
+
+.cheezburger{
+  background:url('cheeseburger.gif') no-repeat 0 0;
+  background-size: contain;
+}
+
+.death{
+  background:url('death.gif') no-repeat 0 0;
+  background-size: contain;
 }
 
 .stats {
@@ -27,4 +42,30 @@ body{
   background-color: pink;
   padding: 0;
   margin: 0;
+}
+
+.pulse{
+  animation-name: pulse;
+  -webkit-animation-name: pulse;
+
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
 }

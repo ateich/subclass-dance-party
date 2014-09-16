@@ -3,10 +3,11 @@ var Chopper = function(yPosition){
   this.health = 3;
   this.y = $('body').height()/2-50;
   this.x = 100;
+  this.points = 0;
 
   this.$node = '<div class="chopper"></div>';
   $('body').append(this.$node);
-  $('.stats').text("Lives: " + this.lives + "   Health: " + this.health);
+  $('.stats').text("Lives: " + this.lives + " Health: " + this.health + " Points: " + this.points);
 
 
   $('.chopper').css({left: this.x, top: this.y});
@@ -26,27 +27,35 @@ Chopper.prototype.moveDown = function(){
   }
 };
 
-Chopper.prototype.loseLife = function(){
-  this.lives--;
-  $('.stats').text("Lives: " + this.lives + " Health: " + this.health);
-  if(this.lives === 0)
+Chopper.prototype.loseLife = function(livesLost){
+  if(!livesLost){
+    livesLost = 1;
+  }
+  this.lives-=livesLost;
+  $('.stats').text("Lives: " + this.lives + " Health: " + this.health + " Points: " + this.points);
+  if(this.lives <= 0)
   {
     //Game Over
     gameOver();
     $('.stats').text("GAME OVER");
   } else {
     this.health = 3;
-    $('.stats').text("Lives: " + this.lives + " Health: " + this.health);
+  $('.stats').text("Lives: " + this.lives + " Health: " + this.health + " Points: " + this.points);
     //Restart level
   }
 };
 
 Chopper.prototype.loseHealth = function(){
   this.health--;
-  $('.stats').text("Lives: " + this.lives + " Health: " + this.health);
+  $('.stats').text("Lives: " + this.lives + " Health: " + this.health + " Points: " + this.points);
   if(this.health === 0)
   {
     this.loseLife();
   }
+};
+
+Chopper.prototype.gainPoints = function(points){
+  this.points += points;
+  $('.stats').text("Lives: " + this.lives + " Health: " + this.health + " Points: " + this.points);
 };
 
