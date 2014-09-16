@@ -25,3 +25,151 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.dancerSquare{
+  width: 20px;
+  height: 20px;
+  background: blue;
+  position:absolute;
+}
+.tinyDancer{
+  width: 50px;
+  height: 50px;
+  background-image: url('tony.jpg');
+  position:absolute;
+  background-size: cover;
+}
+
+.pulse{
+  animation-name: pulse;
+  -webkit-animation-name: pulse;
+
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(0.3);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+.moveSquare{
+  animation-name: moveSquare;
+  -webkit-animation-name: moveSquare;
+
+  animation-duration: 2.0s;
+  -webkit-animation-duration: 2.0s;
+
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+@-webkit-keyframes moveSquare {
+  0% {
+    -webkit-transform: translateY(0%);
+    opacity: 1;
+  }
+  25% {
+    -webkit-transform: translateY(100%);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: translateX(100%) translateY(100%);
+    opacity: 1;
+  }
+  75% {
+    -webkit-transform: translateY(0%) translateX(100%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+
+.infinity {
+    position: relative;
+    width: 112px;
+    height: 50px;
+}
+
+.infinity:before,
+.infinity:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 10px solid red;
+    -moz-border-radius: 50px 50px 0 50px;
+         border-radius: 50px 50px 0 50px;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+
+.infinity:after {
+    left: auto;
+    right: 0;
+    -moz-border-radius: 50px 50px 50px 0;
+         border-radius: 50px 50px 50px 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+.tossing{
+  animation-name: tossing;
+  -webkit-animation-name: tossing;
+
+  animation-duration: 2.5s;
+  -webkit-animation-duration: 2.5s;
+
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes tossing {
+  0% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+@-webkit-keyframes tossing {
+  0% {
+    -webkit-transform: rotate(-4deg);
+  }
+  50% {
+    -webkit-transform: rotate(4deg);
+  }
+  100% {
+    -webkit-transform: rotate(-4deg);
+  }
+}
+
+.hit{
+  background: white;
+  position:absolute;
+}
