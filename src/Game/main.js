@@ -1,13 +1,23 @@
+var chopper;
+var gameOver;
+var makeProjectiles;
+
 $(document).ready(function() {
   var startGame = function(){
   chopper = new Chopper(100);
-  setInterval(function() {
+
+  makeProjectiles = setInterval(function() {
     var projectile = new Projectiles();
-    console.log("hit");
   }, 1000);
+
+  // setInterval(function() {
+  //   var projectile = new Projectiles();
+  // }, 1000);
+
+
   };
 
-  var chopper;
+
   startGame();
 
   $( "body" ).keydown(function(e) {
@@ -18,5 +28,10 @@ $(document).ready(function() {
       chopper.moveDown();
     }
   });
+
+  gameOver = function(){
+    clearInterval(makeProjectiles);
+    $('.projectiles').remove();
+  }
 
 });

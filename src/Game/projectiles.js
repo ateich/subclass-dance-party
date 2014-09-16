@@ -5,20 +5,25 @@ var Projectiles = function() {
 
   this.$node = $('<div class="projectiles"></div>');
   $('body').append(this.$node);
-  console.log(this.$node);
-  // this.projectile = d3.select(this.$node);
   this.$node.css('left', this.x);
   this.$node.css('top', this.y);
-  console.log(this.$node, " HMM");
-  setInterval(this.move.bind(this), 1000);
+  this.moveInterval = setInterval(this.move.bind(this), 50);
 };
 
 Projectiles.prototype.move = function() {
-  //this.x -= 20;
-  //this.$node.css({left: this.x});
-  //
-  this.x -= 20;
-  console.log('yolo', this.x, this.$node.css('left'));
+  this.x -= 25;
   this.$node.css('left', this.x);
-  console.log('Moving');
+
+  var chopperPos = $('.chopper').position();
+
+  if(this.x < chopperPos.left + 150 && this.x > chopperPos.left){
+    if(this.y > chopperPos.top && this.y < chopperPos.top + $('.chopper').height()){
+      chopper.loseHealth();
+      this.$node.remove();
+      clearInterval(this.moveInterval);
+    }
+  } else if(this.x < 0){
+    this.$node.remove();
+    clearInterval(this.moveInterval);
+  }
 };
