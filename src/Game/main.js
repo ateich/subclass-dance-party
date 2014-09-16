@@ -1,6 +1,10 @@
 $(document).ready(function() {
   var startGame = function(){
   chopper = new Chopper(100);
+  setInterval(function() {
+    var projectile = new Projectiles();
+    console.log("hit");
+  }, 1000);
   };
 
   var chopper;
