@@ -6,7 +6,7 @@ var Chopper = function(yPosition){
   this.points = 0;
   this.alive = true;
 
-  this.$node = $('<div class="chopper"></div>');
+  this.$node = $('<div class="chopper shadow"></div>');
   $('body').append(this.$node);
   //this.$node.addClass('explosion');
   // this.$node.toggleClass('explosion');
@@ -50,7 +50,7 @@ Chopper.prototype.loseLife = function(livesLost){
   if(this.lives <= 0)
   {
     //this.$node.toggleClass('explosion');
-     this.$node.addClass('explosion');
+     this.$node.addClass('explosion shadow');
      // console.log(document.getElementsByClassName("chopper"));
     // this.chopper.setAttribute('class', 'explosion');
     //Game Over

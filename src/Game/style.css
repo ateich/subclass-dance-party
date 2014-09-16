@@ -1,11 +1,24 @@
 @import url(http://fonts.googleapis.com/css?family=Indie+Flower);
 
 .chopper {
+  z-index:49;
   background:url('cat.gif') no-repeat 0 0;
   width: 75px;
   height: 150px;
   background-size: contain;
   position:absolute;
+}
+
+.shadow{
+  -webkit-filter: drop-shadow(6px 6px 3px rgba(0,0,0,0.5));
+  filter: url(shadow.svg#drop-shadow);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.greenShadow{
+  -webkit-filter: drop-shadow(6px 6px 3px rgba(0,128,0,0.5));
+  filter: url(shadow.svg#drop-shadow);
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 body{

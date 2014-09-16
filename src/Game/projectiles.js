@@ -3,7 +3,7 @@ var Projectiles = function() {
   this.y = Math.random() * ($('body').height()-50);
 
   this.moveAmount = 4;
-  this.moveTime = 16;
+  this.moveTime = 18;
   if(chopper.points > 100){
     this.moveAmount = 6;
   } else if(chopper.points > 200){
@@ -23,7 +23,7 @@ var Projectiles = function() {
   }
 
 
-  this.$node = $('<div class="projectiles cupcake"></div>');
+  this.$node = $('<div class="projectiles cupcake shadow"></div>');
   $('body').append(this.$node);
   this.$node.css('left', this.x);
   this.$node.css('top', this.y);
