@@ -3,7 +3,7 @@ var Projectile1 = function() {
   clearInterval(this.moveInterval);
   this.moveInterval = setInterval(this.move.bind(this, function(){
     chopper.gainPoints(10);
-  }), 2);
+  }), this.moveTime);
 
 
   this.$node.removeClass('cupcake');

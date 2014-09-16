@@ -39,18 +39,19 @@ body{
   background-size: contain;
 }
 .newGameButton {
-font-family: 'Indie Flower', cursive;
-font-size:4em;
-color:white;
+  font-family: 'Indie Flower', cursive;
+  font-size:4em;
+  color:white;
 
-text-align: center;
-margin-top: 3.75em;
-width:500px;
-height:250px;
+  text-align: center;
+  margin-top: 3.75em;
+  width:500px;
+  height:250px;
 
-border-radius:25px;
-background-color:transparent;
-border-color:white;
+  border-radius:25px;
+  background-color:transparent;
+  border-color:white;
+  outline:none;
 }
 
 .stats {

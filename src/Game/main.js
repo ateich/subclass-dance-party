@@ -1,6 +1,7 @@
 var chopper;
 var gameOver;
 var makeProjectiles = [];
+var projectileTime = 2000;
 
 $(document).ready(function() {
   var startGame = function(){
@@ -11,15 +12,15 @@ $(document).ready(function() {
 
     makeProjectiles.push(setInterval(function() {
       var projectile = new Projectiles();//CUPCAKE
-    }, 1000));
+    }, projectileTime/4));
 
     makeProjectiles.push(setInterval(function() {
       var projectile = new Projectile1();
-    }, 2000));//CHEEZBURGER
+    }, projectileTime));//CHEEZBURGER
 
     makeProjectiles.push(setInterval(function() {
       var projectile = new KillerProjectile();
-    }, 2000));//DEATH
+    }, projectileTime/2));//DEATH
 
 
   };
