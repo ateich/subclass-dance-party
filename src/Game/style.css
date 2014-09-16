@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+
 .chopper {
   background:url('cat.gif') no-repeat 0 0;
   width: 75px;
@@ -8,11 +10,12 @@
 
 body{
   background:url('galaxy.jpg') no-repeat 0 0;
-  background-size: contain;
+  background-size: cover;
   margin:0;
   padding:0;
   background-color: gray;
   overflow:hidden;
+  text-align:center;
 }
 
 .projectiles {
@@ -35,11 +38,28 @@ body{
   background:url('death.gif') no-repeat 0 0;
   background-size: contain;
 }
+.newGameButton {
+font-family: 'Indie Flower', cursive;
+font-size:4em;
+color:white;
+
+text-align: center;
+margin-top: 3.75em;
+width:500px;
+height:250px;
+
+border-radius:25px;
+background-color:transparent;
+border-color:white;
+}
 
 .stats {
+  font-family: 'Indie Flower', cursive;
+  font-size:6em;
+  text-align:center;
+  color:white;
   width: 100%;
   height: 25px;
-  background-color: pink;
   padding: 0;
   margin: 0;
 }

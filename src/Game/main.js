@@ -4,19 +4,22 @@ var makeProjectiles = [];
 
 $(document).ready(function() {
   var startGame = function(){
-  chopper = new Chopper(100);
 
-  makeProjectiles.push(setInterval(function() {
-    var projectile = new Projectiles();//CUPCAKE
-  }, 1000));
+    $('.newGameButton').remove();
 
-  makeProjectiles.push(setInterval(function() {
-    var projectile = new Projectile1();
-  }, 2000));//CHEEZBURGER
+    chopper = new Chopper(100);
 
-  makeProjectiles.push(setInterval(function() {
-    var projectile = new KillerProjectile();
-  }, 2000));//DEATH
+    makeProjectiles.push(setInterval(function() {
+      var projectile = new Projectiles();//CUPCAKE
+    }, 1000));
+
+    makeProjectiles.push(setInterval(function() {
+      var projectile = new Projectile1();
+    }, 2000));//CHEEZBURGER
+
+    makeProjectiles.push(setInterval(function() {
+      var projectile = new KillerProjectile();
+    }, 2000));//DEATH
 
 
   };
@@ -37,8 +40,14 @@ $(document).ready(function() {
     for(var i =0; i<makeProjectiles.length; i++){
     clearInterval(makeProjectiles[i]);
     }
+    $('body').append($('<button class="newGameButton">New Game</button>'))
     $('.projectiles').remove();
     $('.chopper').remove();
+
+    $('.newGameButton').on('click', function(){
+      console.log('NEW GAME');
+      startGame();
+    });
   }
 
 });

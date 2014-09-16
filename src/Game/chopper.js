@@ -37,7 +37,7 @@ Chopper.prototype.loseLife = function(livesLost){
   {
     //Game Over
     gameOver();
-    $('.stats').text("GAME OVER");
+    $('.stats').html("GAME OVER <br> Final Score: " + this.points);
   } else {
     this.health = 3;
   $('.stats').text("Lives: " + this.lives + " Health: " + this.health + " Points: " + this.points);
