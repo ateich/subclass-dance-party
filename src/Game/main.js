@@ -14,7 +14,7 @@ $(document).ready(function() {
     instructionWindow.remove();
     $('.newGameButton').remove();
     $('.newGameMulti').remove();
-
+    $('.inputBox').remove();
 
     chopper = new Chopper(100);
 
@@ -78,6 +78,7 @@ $(document).ready(function() {
     instructionWindow.remove();
     $('.newGameButton').remove();
     $('.newGameMulti').remove();
+    $('.inputBox').remove();
 
     lobbyWindow = $('<div class="lobby"></div>');
     lobbyWindow.append('<div><button class="joinMulti">Join Game</button></div>');
@@ -102,7 +103,8 @@ $(document).ready(function() {
   };
 
   gameOver = function(){
-    console.log("IN GAME OVER");
+    // console.log("IN GAME OVER");
+    $('body').append($('<div class="inputBox"><input placeholder="Your Name Goes Here" type="text"></input></div>'));
     for(var i =0; i<makeProjectiles.length; i++){
     clearInterval(makeProjectiles[i]);
     }

@@ -22,6 +22,7 @@
 }
 
 body{
+  text-shadow: 0px 2px 1px black;
   background:url('galaxy.jpg') no-repeat 0 0;
   background-size: cover;
   margin:0;
@@ -64,21 +65,24 @@ body{
 }
 .newGameButton {
   font-family: 'Indie Flower', cursive;
+  text-shadow: 0px 2px 1px black;
   font-size:4em;
   color:white;
 
   text-align: center;
-  margin-top: 3.75em;
+  margin-top:20px;
+  /*margin-top: 3.75em;*/
   width:500px;
   height:250px;
 
   border-radius:25px;
-  background-color:transparent;
+  background-color: rgba(0, 0, 0, 0.3);
   border-color:white;
   outline:none;
 }
 .newGameMulti {
   font-family: 'Indie Flower', cursive;
+  text-shadow: 0px 2px 1px black;
   font-size:4em;
   color:white;
 
@@ -88,12 +92,13 @@ body{
   height:250px;
 
   border-radius:25px;
-  background-color:transparent;
+  background-color: rgba(0, 0, 0, 0.3);
   border-color:white;
   outline:none;
 }
 .joinMulti {
   font-family: 'Indie Flower', cursive;
+  text-shadow: 0px 2px 1px black;
   font-size:1em;
   color:white;
 
@@ -103,7 +108,7 @@ body{
   height:40px;
 
   border-radius:5px;
-  background-color:transparent;
+  background-color: rgba(0, 0, 0, 0.3);
   border-color:white;
   outline:none;
 }
@@ -124,6 +129,20 @@ body{
 h3{
   margin:0;
   padding:0;
+}
+
+input[type="text"]
+{
+    background: rgba(0, 0, 0, 0.5);
+    font-family: 'Indie Flower', cursive;
+    font-size:2em;
+    text-align:center;
+    color:white;
+    outline: none;
+}
+
+.inputBox{
+  margin-top:225px;
 }
 
 .stats {
