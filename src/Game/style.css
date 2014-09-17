@@ -73,7 +73,7 @@ body{
   margin-top:20px;
   /*margin-top: 3.75em;*/
   width:500px;
-  height:250px;
+  height:125px;
 
   border-radius:25px;
   background-color: rgba(0, 0, 0, 0.3);
@@ -129,6 +129,20 @@ body{
 h3{
   margin:0;
   padding:0;
+}
+
+.highScores{
+  font-family: 'Indie Flower', cursive;
+  font-size:2em;
+  text-align:center;
+  color:white;
+}
+
+.score{
+  font-family: 'Indie Flower', cursive;
+  font-size:1em;
+  text-align:center;
+  color:white;
 }
 
 input[type="text"]

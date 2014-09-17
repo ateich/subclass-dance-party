@@ -5,8 +5,7 @@ var showLobby;
 var makeProjectiles = [];
 var projectileTime = 2000;
 var instructionWindow;
-var myDataRef = new Firebase('https://glowing-heat-1852.firebaseio.com');
-// var myDataRef.set();
+var myDataRef = new Firebase('https://glowing-heat-1852.firebaseio.com//scoreList');
 
 $(document).ready(function() {
   var startGame = function(){
@@ -73,6 +72,7 @@ $(document).ready(function() {
     }
   });
 
+
   showLobby = function(){
     console.log("LOBBY");
     instructionWindow.remove();
@@ -96,18 +96,52 @@ $(document).ready(function() {
     $('.newGameButton').remove();
     $('.newGameMulti').remove();
 
+    var scoreListView = myDataRef.limit(5);
+    console.log(scoreListView);
+
     lobbyWindow = $('<div class="highScores"></div>');
-    lobbyWindow.append('<div>Scores</div>');
+    lobbyWindow.append('<div class="highScores">High Scores</div>');
+
+    var leaders = [];
+    myDataRef.once('value', function(data) {
+        //console.log(data.val());
+        for(var key in data.val()){
+          leaders.push(data.val()[key]);
+        }
+        for(var i=leaders.length-1; i>=leaders.length-5; i--){
+          lobbyWindow.append('<div class="score">' + leaders[i].name +' : ' + leaders[i].score + '</div>');
+        }
+        console.log(leaders);
+    });
+
     $('body').append(lobbyWindow);
 
   };
 
   gameOver = function(){
     // console.log("IN GAME OVER");
-    $('body').append($('<div class="inputBox"><input placeholder="Your Name Goes Here" type="text"></input></div>'));
     for(var i =0; i<makeProjectiles.length; i++){
     clearInterval(makeProjectiles[i]);
     }
+    $('body').append($('<div class="inputBox"><input autofocus id="playerName" placeholder="Your Name Goes Here" type="text"></input></div>'));
+      $(".inputBox").keydown(function(e){
+        if(e.keyCode == 13){
+            var playerName = $("#playerName").val();
+            console.log(chopper.points);
+            var playerNode = myDataRef.child(playerName);
+            playerNode.setWithPriority({ name:playerName, score:chopper.points }, chopper.points);
+            //myDataRef.push({Name: playerName, Score: chopper.points});
+       }
+
+    // function getFirstFromList(ref, cb) {
+    //   ref.startAt().limit(5).once("child_added", function(snapshot) {
+    //   cb(snapshot.val());
+    // });
+    // }
+
+
+    });
+
     $('body').append($('<button class="newGameButton">New Game</button>'));
     $('.projectiles').remove();
     $('.chopper').remove();
@@ -117,5 +151,13 @@ $(document).ready(function() {
       startGame();
     });
   }
+
+//   $(".inputBox").keydown(function(e){
+//     if(e.keyCode == 13){
+//         // var playerName = $(".inputBox").val();
+//         console.log('Test');
+//         // myDataRef.set({Name: name});
+//     }
+// });
 
 });
