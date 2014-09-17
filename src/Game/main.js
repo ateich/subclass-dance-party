@@ -31,6 +31,8 @@ $(document).ready(function() {
   };
 
   var instructions = function(){
+    $('.highScores').remove();
+
     instructionWindow = $('<div class="instructions"></div>');
     instructionWindow.append('<h3>Instructions</h3>');
     instructionWindow.append('<div>Use the Up and Down Arrow Keys to Move <img class="shadow" height="75px" src="cat.gif"/></div>');
@@ -88,7 +90,6 @@ $(document).ready(function() {
     lobbyWindow.append('<div><button class="joinMulti">Join Game</button></div>');
     lobbyWindow.append('<div><button class="joinMulti">Join Game</button></div>');
     $('body').append(lobbyWindow);
-
   };
 
   showScores = function(){
@@ -111,7 +112,9 @@ $(document).ready(function() {
         for(var i=leaders.length-1; i>=leaders.length-5; i--){
           lobbyWindow.append('<div class="score">' + leaders[i].name +' : ' + leaders[i].score + '</div>');
         }
-        console.log(leaders);
+        // console.log(leaders);
+        lobbyWindow.append('<div><button id="scoreBackButton" style="height:100px; margin-top:10px; font-size:2.25em" class="newGameMulti">Back</button></div>');
+        $('#scoreBackButton').on('click', function(){instructions();});
     });
 
     $('body').append(lobbyWindow);
@@ -119,7 +122,6 @@ $(document).ready(function() {
   };
 
   gameOver = function(){
-    // console.log("IN GAME OVER");
     for(var i =0; i<makeProjectiles.length; i++){
     clearInterval(makeProjectiles[i]);
     }
@@ -130,15 +132,7 @@ $(document).ready(function() {
             console.log(chopper.points);
             var playerNode = myDataRef.child(playerName);
             playerNode.setWithPriority({ name:playerName, score:chopper.points }, chopper.points);
-            //myDataRef.push({Name: playerName, Score: chopper.points});
        }
-
-    // function getFirstFromList(ref, cb) {
-    //   ref.startAt().limit(5).once("child_added", function(snapshot) {
-    //   cb(snapshot.val());
-    // });
-    // }
-
 
     });
 
@@ -151,13 +145,5 @@ $(document).ready(function() {
       startGame();
     });
   }
-
-//   $(".inputBox").keydown(function(e){
-//     if(e.keyCode == 13){
-//         // var playerName = $(".inputBox").val();
-//         console.log('Test');
-//         // myDataRef.set({Name: name});
-//     }
-// });
 
 });
