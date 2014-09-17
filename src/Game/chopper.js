@@ -37,10 +37,12 @@ Chopper.prototype.loseLife = function(livesLost){
   if(!livesLost){
     livesLost = 1;
   }
-  this.lives-=livesLost;
-  if(this.lives < 0){
-    this.lives = 0;
+  if(this.lives-livesLost< 0)
+  {
+    this.lives=0;
     this.health = 0;
+  }else{
+    this.lives-=livesLost;
   }
   if(this.health < 0)
   {
@@ -71,7 +73,10 @@ Chopper.prototype.loseLife = function(livesLost){
 };
 
 Chopper.prototype.loseHealth = function(){
-  this.health--;
+  if(this.health-1 >= 0)
+  {
+    this.health--;
+  }
   $('.stats').text("Lives: " + this.lives + " Health: " + this.health + " Points: " + this.points);
   if(this.health === 0)
   {
@@ -84,7 +89,9 @@ Chopper.prototype.loseHealth = function(){
 };
 
 Chopper.prototype.gainPoints = function(points){
-  this.points += points;
-  $('.stats').text("Lives: " + this.lives + " Health: " + this.health + " Points: " + this.points);
+  if(this.lives > 0){
+    this.points += points;
+    $('.stats').text("Lives: " + this.lives + " Health: " + this.health + " Points: " + this.points);
+  }
 };
 
