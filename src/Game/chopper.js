@@ -77,6 +77,10 @@ Chopper.prototype.loseHealth = function(){
   {
     this.loseLife();
   }
+  if(this.lives === 1){
+     this.$node.removeClass('shadow');
+     this.$node.addClass('redShadow pulse');
+  }
 };
 
 Chopper.prototype.gainPoints = function(points){

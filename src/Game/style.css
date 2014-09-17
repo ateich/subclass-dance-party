@@ -15,8 +15,8 @@
   -webkit-transform: translate3d(0, 0, 0);
 }
 
-.greenShadow{
-  -webkit-filter: drop-shadow(6px 6px 3px rgba(0,128,0,0.5));
+.redShadow{
+  -webkit-filter: drop-shadow(6px 6px 3px rgba(256,0,0,0.5));
   filter: url(shadow.svg#drop-shadow);
   -webkit-transform: translate3d(0, 0, 0);
 }
@@ -73,6 +73,36 @@ body{
   height:250px;
 
   border-radius:25px;
+  background-color:transparent;
+  border-color:white;
+  outline:none;
+}
+.newGameMulti {
+  font-family: 'Indie Flower', cursive;
+  font-size:4em;
+  color:white;
+
+  text-align: center;
+  margin-top: 3.75em;
+  width:500px;
+  height:250px;
+
+  border-radius:25px;
+  background-color:transparent;
+  border-color:white;
+  outline:none;
+}
+.joinMulti {
+  font-family: 'Indie Flower', cursive;
+  font-size:1em;
+  color:white;
+
+  text-align: center;
+  margin-top: .75em;
+  width:100px;
+  height:40px;
+
+  border-radius:5px;
   background-color:transparent;
   border-color:white;
   outline:none;
