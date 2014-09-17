@@ -32,6 +32,10 @@ $(document).ready(function() {
 
   var instructions = function(){
     $('.highScores').remove();
+    $('#mainMenu').remove();
+    $('#newGame').remove();
+    $('.inputBox').remove();
+    $('.stats').empty();
 
     instructionWindow = $('<div class="instructions"></div>');
     instructionWindow.append('<h3>Instructions</h3>');
@@ -81,6 +85,7 @@ $(document).ready(function() {
     $('.newGameButton').remove();
     $('.newGameMulti').remove();
     $('.inputBox').remove();
+    $('.stats').remove();
 
     lobbyWindow = $('<div class="lobby"></div>');
     lobbyWindow.append('<div><button class="joinMulti">Join Game</button></div>');
@@ -125,6 +130,8 @@ $(document).ready(function() {
     for(var i =0; i<makeProjectiles.length; i++){
     clearInterval(makeProjectiles[i]);
     }
+
+
     $('body').append($('<div class="inputBox"><input autofocus id="playerName" placeholder="Your Name Goes Here" type="text"></input></div>'));
       $(".inputBox").keydown(function(e){
         if(e.keyCode == 13){
@@ -132,17 +139,25 @@ $(document).ready(function() {
             console.log(chopper.points);
             var playerNode = myDataRef.child(playerName);
             playerNode.setWithPriority({ name:playerName, score:chopper.points }, chopper.points);
+            $('#playerName').attr('placeholder', 'Added to Leaderboard');
+            $('#playerName').prop('disabled', true);
+            $("#playerName").val('');
        }
 
     });
 
-    $('body').append($('<button class="newGameButton">New Game</button>'));
+    $('body').append($('<button id="newGame"class="newGameButton">New Game</button>'));
+    $('body').append($('<br><button id="mainMenu" class="newGameButton">Main Menu</button>'));
     $('.projectiles').remove();
     $('.chopper').remove();
 
-    $('.newGameButton').on('click', function(){
+    $('#newGame').on('click', function(){
       console.log('NEW GAME');
       startGame();
+    });
+    $('#mainMenu').on('click', function(){
+      // console.log('NEW GAME');
+      instructions();
     });
   }
 
